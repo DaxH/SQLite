@@ -71,7 +71,7 @@ public class ShoppingItemDB {
         Cursor cursor = bd.query(ShoppingElementEntry.TABLE_NAME,new String[]{ShoppingElementEntry._ID,ShoppingElementEntry.COLUMN_NAME_TITLE},null,null,null,null,null);
         if (cursor.moveToFirst()){
             do {
-                ShoppingItem s = new ShoppingItem(cursor.getInt(0),cursor.getString(1));
+                ShoppingItem s = new ShoppingItem(cursor.getLong(0),cursor.getString(1));
                 shoppingItems.add(s);
             }while (cursor.moveToNext());
         }
